@@ -11,15 +11,13 @@
 
 6. Set smtp credentials in '.env' file
 
-7. `php artisan queue:table`
+7. `php artisan migrate`
 
-8. `php artisan migrate`
+8. `composer dumpautoload -o`
 
-9. `composer dumpautoload -o`
+9. `php artisan queue:work`
 
-10. `php artisan queue:work`
-
-11. `php artisan order:place "test@example.com" "12.50"`
+10. `php artisan order:place test@example.com 12.50`
 
 
 
