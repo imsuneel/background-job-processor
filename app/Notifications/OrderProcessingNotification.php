@@ -33,9 +33,6 @@ class OrderProcessingNotification extends Notification
 
     /**
      * Get the mail representation of the notification.
-     *
-     * @param mixed $notifiable
-     * @return OrderProcessingMail
      */
     public function toMail(mixed $notifiable): OrderProcessingMail
     {

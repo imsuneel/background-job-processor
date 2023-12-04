@@ -5,16 +5,17 @@ namespace App\Console\Commands;
 use App\Jobs\OrderProcessing;
 use App\Models\Order;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Console\PromptsForMissingInput;
 use Illuminate\Support\Facades\Validator;
 
-class PlaceOrder extends Command
+class PlaceOrder extends Command implements PromptsForMissingInput
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'order:place {email} {amount}';
+    protected $signature = 'order:place {email : email of the user} {amount : amount of this order}';
 
     /**
      * The console command using for placing order.
@@ -51,9 +52,6 @@ class PlaceOrder extends Command
         return Command::FAILURE;
     }
 
-    /**
-     * @return array|null
-     */
     protected function validateOptions(): ?array
     {
         $validator = Validator::make($this->argument(), [

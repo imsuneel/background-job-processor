@@ -16,13 +16,10 @@ class OrderProcessingMail extends Mailable implements ShouldQueue
 
     /**
      * Create a new message instance.
-     *
-     * @param object $data
      */
     public function __construct(
         public object $data
-    )
-    {
+    ) {
         //
     }
 
